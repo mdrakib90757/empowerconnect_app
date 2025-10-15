@@ -33,9 +33,7 @@ class RequestAssistanceScreen extends StatelessWidget {
               children: [
                 const CircleAvatar(
                   radius: 30,
-                  backgroundImage: AssetImage(
-                    'assets/img/download (7).jpeg',
-                  ),
+                  backgroundImage: AssetImage('assets/img/download (7).jpeg'),
                 ),
                 const SizedBox(width: 16),
                 Column(
@@ -88,23 +86,28 @@ class RequestAssistanceScreen extends StatelessWidget {
                       title: 'Trusty Maildrop',
                     ),
 
-                    _buildCategoryHeader('Daily Tasks'),
+                    //_buildCategoryHeader('Daily Tasks'),
                     _buildMainOption(
                       icon: Icons.devices_other,
-                      title: 'Assistive Tech',
+                      title: 'Daily Tasks',
                       subtitle: 'Learn more',
-                      trailingIcon:
-                          Icons.qr_code,
+                      trailingIcon: Icons.arrow_forward_ios,
                     ),
                     _buildMainOption(
                       icon: Icons.devices_other,
-                      title: 'Assistive Tech',
+                      title: 'Transportation',
                       subtitle: 'Learn more',
-                      trailingIcon:
-                          Icons.qr_code,
+                      trailingIcon: Icons.arrow_forward_ios,
                     ),
-
+                    _buildMainOption(
+                      icon: Icons.devices_other,
+                      title: 'Tack help',
+                      subtitle: 'Learn more',
+                      trailingIcon: Icons.arrow_forward_ios,
+                    ),
                     const Spacer(),
+
+                    // Find a Volunteer button
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
@@ -112,8 +115,7 @@ class RequestAssistanceScreen extends StatelessWidget {
                           // Handle find a volunteer
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                              APPColor.backgroundColor,
+                          backgroundColor: APPColor.backgroundColor,
                           padding: const EdgeInsets.symmetric(vertical: 15),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
@@ -192,16 +194,11 @@ class RequestAssistanceScreen extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(5),
         decoration: BoxDecoration(
-          color: APPColor.greyColor.withOpacity(
-            0.5,
-          ),
+          color: APPColor.greyColor.withOpacity(0.5),
           borderRadius: BorderRadius.circular(12),
         ),
         child: ListTile(
-          leading: Icon(
-            icon,
-            color: APPColor.backgroundColor,
-          ),
+          leading: Icon(icon, color: APPColor.backgroundColor),
           title: Text(
             title,
             style: const TextStyle(color: Colors.black87, fontSize: 18),
@@ -211,9 +208,7 @@ class RequestAssistanceScreen extends StatelessWidget {
             color: APPColor.greyColor,
             size: 16,
           ),
-          onTap: () {
-
-          },
+          onTap: () {},
         ),
       ),
     );
@@ -232,16 +227,14 @@ class RequestAssistanceScreen extends StatelessWidget {
         elevation: 10,
         child: Container(
           decoration: BoxDecoration(
-            color: APPColor.greyColor.withOpacity(0.5),
+            color: APPColor.whiteColor,
             borderRadius: BorderRadius.circular(12),
           ),
           child: ListTile(
             leading: Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: iconColor.withOpacity(
-                  0.1,
-                ),
+                color: iconColor.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Icon(icon, color: iconColor, size: 28),
@@ -259,9 +252,7 @@ class RequestAssistanceScreen extends StatelessWidget {
               style: const TextStyle(color: Colors.black87, fontSize: 14),
             ),
             trailing: Icon(trailingIcon, color: Colors.black87, size: 24),
-            onTap: () {
-
-            },
+            onTap: () {},
           ),
         ),
       ),

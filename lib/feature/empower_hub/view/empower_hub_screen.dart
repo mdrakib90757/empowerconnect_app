@@ -47,8 +47,7 @@ class _EmpowermentHubScreenState extends State<EmpowermentHubScreen> {
                   subtitle: 'Get more',
                 ),
                 _buildTopMenuItem(
-                  icon:
-                      Icons.diversity_3,
+                  icon: Icons.diversity_3,
                   title: 'Assistance\nNetworks',
                   subtitle: 'Gnesks',
                 ),
@@ -74,33 +73,27 @@ class _EmpowermentHubScreenState extends State<EmpowermentHubScreen> {
                         icon: Icons.gavel,
                         title: 'Legal Rights',
                         subtitle: 'Details',
-                        trailingIcon:
-                            Icons.balance,
+                        trailingIcon: Icons.balance,
                       ),
                       _buildMainOption(
-                        icon: Icons
-                            .people_alt,
+                        icon: Icons.people_alt,
                         title: 'Support Groups',
                         subtitle: 'Select',
                         trailingIcon: Icons.group,
-                        iconColor:
-                            Colors.green,
+                        iconColor: Colors.green,
                       ),
                       _buildMainOption(
                         icon: Icons.location_on,
                         title: 'Assistive Tech',
                         subtitle: 'New Registration',
-                        trailingIcon:
-                            Icons.star_border,
+                        trailingIcon: Icons.star_border,
                       ),
                       _buildMainOption(
                         icon: Icons.devices_other,
                         title: 'Assistive Tech',
                         subtitle: 'Learn more',
-                        trailingIcon:
-                            Icons.qr_code,
+                        trailingIcon: Icons.qr_code,
                       ),
-
                     ],
                   ),
                 ),
@@ -124,8 +117,7 @@ class _EmpowermentHubScreenState extends State<EmpowermentHubScreen> {
           margin: const EdgeInsets.symmetric(horizontal: 8),
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color:
-                APPColor.backgroundColor,
+            color: APPColor.backgroundColor,
             borderRadius: BorderRadius.circular(12),
           ),
           child: Column(
@@ -166,16 +158,14 @@ class _EmpowermentHubScreenState extends State<EmpowermentHubScreen> {
         elevation: 10,
         child: Container(
           decoration: BoxDecoration(
-            color: APPColor.greyColor.withOpacity(0.5),
+            color: APPColor.whiteColor,
             borderRadius: BorderRadius.circular(12),
           ),
           child: ListTile(
             leading: Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: iconColor.withOpacity(
-                  0.1,
-                ),
+                color: iconColor.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Icon(icon, color: iconColor, size: 28),

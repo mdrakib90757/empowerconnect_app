@@ -17,7 +17,6 @@ class CustomNavigation extends StatefulWidget {
 class _CustomNavigationState extends State<CustomNavigation> {
   int _selectedIndex = 0;
 
-
   static final List<Widget> _widgetOptions = <Widget>[
     communityScreen(),
     RequestAssistanceScreen(),
@@ -38,19 +37,15 @@ class _CustomNavigationState extends State<CustomNavigation> {
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
 
-        backgroundColor:
-            APPColor.backgroundColor,
-        selectedItemColor:
-            APPColor.primaryColor,
-        unselectedItemColor:
-            APPColor.whiteColor,
+        backgroundColor: APPColor.backgroundColor,
+        selectedItemColor: APPColor.primaryColor,
+        unselectedItemColor: APPColor.whiteColor,
         selectedLabelStyle: const TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 15,
         ),
         unselectedLabelStyle: const TextStyle(fontSize: 14),
-        type: BottomNavigationBarType
-            .fixed,
+        type: BottomNavigationBarType.fixed,
 
         items: <BottomNavigationBarItem>[
           // 1. Community Hub

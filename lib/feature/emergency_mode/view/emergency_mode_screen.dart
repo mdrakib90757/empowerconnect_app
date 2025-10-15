@@ -28,9 +28,7 @@ class EmergencyHelpScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
             child: CircleAvatar(
-              backgroundColor: APPColor.greyColor.withOpacity(
-                0.3,
-              ),
+              backgroundColor: APPColor.greyColor.withOpacity(0.3),
               child: Icon(Icons.person, color: APPColor.whiteColor, size: 24),
             ),
           ),
@@ -88,14 +86,14 @@ class EmergencyHelpScreen extends StatelessWidget {
                   style: TextStyle(color: APPColor.whiteColor, fontSize: 18),
                 ),
                 const SizedBox(height: 10),
+
+                // dial Trusted Contact button
                 SizedBox(
                   width: double.infinity,
                   child: OutlinedButton(
-                    onPressed: () {
-
-                    },
+                    onPressed: () {},
                     style: OutlinedButton.styleFrom(
-                      backgroundColor: APPColor.greyColor.withOpacity(0.5),
+                      backgroundColor: APPColor.whiteColor,
                       side: BorderSide(color: APPColor.greyColor, width: 1),
                       padding: const EdgeInsets.symmetric(vertical: 15),
                       shape: RoundedRectangleBorder(
@@ -105,7 +103,7 @@ class EmergencyHelpScreen extends StatelessWidget {
                     child: Text(
                       'Dial Trusted Contact',
                       style: TextStyle(
-                        color: APPColor.whiteColor,
+                        color: APPColor.backgroundColor,
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
                       ),
@@ -113,15 +111,14 @@ class EmergencyHelpScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 15),
+
                 // SOS Services Button
                 SizedBox(
                   width: double.infinity,
                   child: OutlinedButton(
-                    onPressed: () {
-
-                    },
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: APPColor.greyColor.withOpacity(0.5),
+                      backgroundColor: APPColor.whiteColor,
                       padding: const EdgeInsets.symmetric(vertical: 15),
                       side: BorderSide(color: APPColor.greyColor, width: 1),
                       shape: RoundedRectangleBorder(
@@ -131,7 +128,7 @@ class EmergencyHelpScreen extends StatelessWidget {
                     child: Text(
                       'SOS Services',
                       style: TextStyle(
-                        color: APPColor.whiteColor,
+                        color: APPColor.backgroundColor,
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
                       ),
