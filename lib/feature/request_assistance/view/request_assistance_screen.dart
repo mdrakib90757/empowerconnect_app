@@ -8,6 +8,7 @@ class RequestAssistanceScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: APPColor.backgroundColor,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
@@ -17,12 +18,12 @@ class RequestAssistanceScreen extends StatelessWidget {
           fontWeight: FontWeight.bold,
           fontSize: 20,
         ),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: APPColor.whiteColor),
-          onPressed: () {
-
-          },
-        ),
+        // leading: IconButton(
+        //   icon: Icon(Icons.arrow_back_ios, color: APPColor.whiteColor),
+        //   onPressed: () {
+        //
+        //   },
+        // ),
       ),
       body: Column(
         children: [
@@ -34,7 +35,7 @@ class RequestAssistanceScreen extends StatelessWidget {
                   radius: 30,
                   backgroundImage: AssetImage(
                     'assets/img/download (7).jpeg',
-                  ), // Add your image asset
+                  ),
                 ),
                 const SizedBox(width: 16),
                 Column(
@@ -49,7 +50,7 @@ class RequestAssistanceScreen extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'Convento Mients', // Assuming this is a placeholder
+                      'Convento Mients',
                       style: TextStyle(color: Colors.white70, fontSize: 16),
                     ),
                   ],
@@ -193,14 +194,14 @@ class RequestAssistanceScreen extends StatelessWidget {
         decoration: BoxDecoration(
           color: APPColor.greyColor.withOpacity(
             0.5,
-          ), // Light grey for categories
+          ),
           borderRadius: BorderRadius.circular(12),
         ),
         child: ListTile(
           leading: Icon(
             icon,
             color: APPColor.backgroundColor,
-          ), // Dark blue icon
+          ),
           title: Text(
             title,
             style: const TextStyle(color: Colors.black87, fontSize: 18),
@@ -211,7 +212,7 @@ class RequestAssistanceScreen extends StatelessWidget {
             size: 16,
           ),
           onTap: () {
-            // Handle category tap
+
           },
         ),
       ),

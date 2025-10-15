@@ -12,14 +12,15 @@ class _EmpowermentHubScreenState extends State<EmpowermentHubScreen> {
     return Scaffold(
       backgroundColor: APPColor.backgroundColor,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: APPColor.whiteColor),
-          onPressed: () {
-            // Handle back button press
-          },
-        ),
+        // leading: IconButton(
+        //   icon: Icon(Icons.arrow_back_ios, color: APPColor.whiteColor),
+        //   onPressed: () {
+        //     // Handle back button press
+        //   },
+        // ),
         title: Text(
           'Empowerment Hub',
           style: TextStyle(
@@ -41,15 +42,15 @@ class _EmpowermentHubScreenState extends State<EmpowermentHubScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 _buildTopMenuItem(
-                  icon: Icons.gavel, // Placeholder for Legal Rights
+                  icon: Icons.gavel,
                   title: 'Legal Rights',
                   subtitle: 'Get more',
                 ),
                 _buildTopMenuItem(
                   icon:
-                      Icons.diversity_3, // Placeholder for Assistance Networks
+                      Icons.diversity_3,
                   title: 'Assistance\nNetworks',
-                  subtitle: 'Gnesks', // Assuming this is placeholder text
+                  subtitle: 'Gnesks',
                 ),
               ],
             ),
@@ -74,32 +75,32 @@ class _EmpowermentHubScreenState extends State<EmpowermentHubScreen> {
                         title: 'Legal Rights',
                         subtitle: 'Details',
                         trailingIcon:
-                            Icons.balance, // Placeholder for scale icon
+                            Icons.balance,
                       ),
                       _buildMainOption(
                         icon: Icons
-                            .people_alt, // Changed to a more suitable icon for support groups
+                            .people_alt,
                         title: 'Support Groups',
                         subtitle: 'Select',
-                        trailingIcon: Icons.group, // Placeholder for group icon
+                        trailingIcon: Icons.group,
                         iconColor:
-                            Colors.green, // Example of changing icon color
+                            Colors.green,
                       ),
                       _buildMainOption(
-                        icon: Icons.location_on, // For location/registration
+                        icon: Icons.location_on,
                         title: 'Assistive Tech',
                         subtitle: 'New Registration',
                         trailingIcon:
-                            Icons.star_border, // Placeholder for star icon
+                            Icons.star_border,
                       ),
                       _buildMainOption(
-                        icon: Icons.devices_other, // For assistive tech
+                        icon: Icons.devices_other,
                         title: 'Assistive Tech',
                         subtitle: 'Learn more',
                         trailingIcon:
-                            Icons.qr_code, // Placeholder for QR code icon
+                            Icons.qr_code,
                       ),
-                      // Add more options as needed based on the design
+
                     ],
                   ),
                 ),
@@ -124,7 +125,7 @@ class _EmpowermentHubScreenState extends State<EmpowermentHubScreen> {
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color:
-                APPColor.backgroundColor, // Slightly lighter blue for options
+                APPColor.backgroundColor,
             borderRadius: BorderRadius.circular(12),
           ),
           child: Column(
@@ -157,7 +158,7 @@ class _EmpowermentHubScreenState extends State<EmpowermentHubScreen> {
     required String title,
     required String subtitle,
     required IconData trailingIcon,
-    Color iconColor = const Color(0xFF232D50), // Default icon color
+    Color iconColor = const Color(0xFF232D50),
   }) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15.0),
@@ -165,7 +166,7 @@ class _EmpowermentHubScreenState extends State<EmpowermentHubScreen> {
         elevation: 10,
         child: Container(
           decoration: BoxDecoration(
-            color: APPColor.greyColor.withOpacity(0.5), // Light grey background
+            color: APPColor.greyColor.withOpacity(0.5),
             borderRadius: BorderRadius.circular(12),
           ),
           child: ListTile(
@@ -174,7 +175,7 @@ class _EmpowermentHubScreenState extends State<EmpowermentHubScreen> {
               decoration: BoxDecoration(
                 color: iconColor.withOpacity(
                   0.1,
-                ), // Light tint of the icon color
+                ),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Icon(icon, color: iconColor, size: 28),

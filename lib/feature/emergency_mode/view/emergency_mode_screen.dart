@@ -8,6 +8,7 @@ class EmergencyHelpScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: APPColor.backgroundColor,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
@@ -17,12 +18,12 @@ class EmergencyHelpScreen extends StatelessWidget {
           fontWeight: FontWeight.bold,
           fontSize: 20,
         ),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: APPColor.whiteColor),
-          onPressed: () {
-            // Handle back button press
-          },
-        ),
+        // leading: IconButton(
+        //   icon: Icon(Icons.arrow_back, color: APPColor.whiteColor),
+        //   onPressed: () {
+        //     // Handle back button press
+        //   },
+        // ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16.0),

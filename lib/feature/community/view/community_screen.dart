@@ -17,12 +17,13 @@ class _communityScreenState extends State<communityScreen> {
       backgroundColor: APPColor.backgroundColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: APPColor.whiteColor),
-          onPressed: () {
-
-          },
-        ),
+        automaticallyImplyLeading: false,
+        // leading: IconButton(
+        //   icon: Icon(Icons.arrow_back_ios, color: APPColor.whiteColor),
+        //   onPressed: () {
+        //
+        //   },
+        // ),
         title: CustomAppLargeText(
           text: "Community Forums",
           color: APPColor.whiteColor,
@@ -42,7 +43,7 @@ class _communityScreenState extends State<communityScreen> {
               Icons.message,
               color: APPColor.whiteColor,
               weight: 5,
-            ), // Chat icon
+            ),
             onPressed: () {
               // Handle chat
             },

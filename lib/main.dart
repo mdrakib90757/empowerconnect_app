@@ -1,4 +1,5 @@
 import 'package:empowerconnect_app/core/shared_widgets/custom_navigation.dart';
+import 'package:empowerconnect_app/feature/auth/view/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: CustomNavigation(),
+      home: LoginPage(),
     );
   }
 }
