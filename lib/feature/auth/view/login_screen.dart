@@ -3,59 +3,59 @@ import 'package:empowerconnect_app/core/utils/color.dart';
 import 'package:empowerconnect_app/feature/auth/view/ragistraion_screen.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final appBarHeight = AppBar().preferredSize.height;
+    final statusBarHeight = MediaQuery.of(context).padding.top;
+
     return Scaffold(
       backgroundColor: APPColor.backgroundColor,
       appBar: AppBar(
         title: const Text('LogIn', style: TextStyle(color: Colors.white)),
         centerTitle: true,
         backgroundColor: Colors.transparent,
-        excludeHeaderSemantics: true,
-        // leading: IconButton(
-        //   icon: const Icon(Icons.arrow_back, color: Colors.white),
-        //   onPressed: () {
-        //     // Handle back button
-        //   },
-        // ),
+        elevation: 0, // To make it fully transparent
       ),
-
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            // heading image
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 50.0),
-              child:
-                  //Icon(  Icons.handshake,size: 100,color: Colors.white,)
-                  Image.asset(
-                    'assets/img/handshake.png',
-                    height: 150,
-                    width: 150,
-                    color: Colors.white,
-                  ),
-            ),
-            SizedBox(height: 100),
-            //Spacer(),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                height: MediaQuery.of(context).size.height / 2,
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            minHeight: screenHeight - appBarHeight - statusBarHeight,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // heading image
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 50.0),
+                child: Image.asset(
+                  'assets/img/handshake.png',
+                  height: 150,
+                  width: 150,
+                  color: Colors.white,
+                ),
+              ),
+
+              // Bottom form container
+              Container(
                 decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.7),
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(30),
                     topRight: Radius.circular(30),
                   ),
                 ),
-                padding: const EdgeInsets.only(left: 20, right: 20),
+                padding: const EdgeInsets.only(left: 20, right: 20, top: 40, bottom: 20),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-
                   children: [
                     _buildTextField(
                       hintText: 'Username or Email',
@@ -135,8 +135,8 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

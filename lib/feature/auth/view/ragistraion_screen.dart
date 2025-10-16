@@ -6,6 +6,10 @@ class RegistrationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final appBarHeight = AppBar().preferredSize.height;
+    final statusBarHeight = MediaQuery.of(context).padding.top;
+
     return Scaffold(
       backgroundColor: APPColor.backgroundColor,
       appBar: AppBar(
@@ -15,6 +19,7 @@ class RegistrationPage extends StatelessWidget {
         ),
         centerTitle: true,
         backgroundColor: APPColor.backgroundColor,
+        elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
@@ -23,108 +28,114 @@ class RegistrationPage extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 50.0),
-              child:
-                  //Icon(  Icons.handshake,size: 100,color: Colors.white,)
-                  Image.asset(
-                    'assets/img/handshake.png',
-                    height: 150,
-                    width: 150,
-                    color: Colors.white,
-                  ),
-            ),
-            //Spacer(),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.7),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  topRight: Radius.circular(30),
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            minHeight: screenHeight - appBarHeight - statusBarHeight,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // heading image
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 30.0), // Adjusted padding
+                child: Image.asset(
+                  'assets/img/handshake.png',
+                  height: 120, // Adjusted size
+                  width: 120,  // Adjusted size
+                  color: Colors.white,
                 ),
               ),
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _buildTextField(
-                    hintText: 'Full Name',
-                    icon: Icons.person_outline,
-                  ),
-                  const SizedBox(height: 16.0),
-                  _buildTextField(
-                    hintText: 'Username or Email',
-                    icon: Icons.email_outlined,
-                  ),
-                  const SizedBox(height: 16.0),
-                  _buildTextField(
-                    hintText: 'Mobile Number',
-                    icon: Icons.phone_android_outlined,
-                    keyboardType: TextInputType.phone,
-                  ),
-                  const SizedBox(height: 16.0),
-                  _buildTextField(
-                    hintText: 'Password',
-                    icon: Icons.lock_outline,
-                    obscureText: true,
-                  ),
-                  const SizedBox(height: 16.0),
-                  _buildTextField(
-                    hintText: 'Confirm Password',
-                    icon: Icons.lock_open_outlined,
-                    obscureText: true,
-                  ),
 
-                  const SizedBox(height: 32.0),
-
-                  // registration button
-                  ElevatedButton(
-                    onPressed: () {
-                      // Handle registration logic
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: APPColor.backgroundColor,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 50,
-                        vertical: 15,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
+              // Bottom form container
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.7),
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
+                  ),
+                ),
+                padding:
+                const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _buildTextField(
+                      hintText: 'Full Name',
+                      icon: Icons.person_outline,
                     ),
-                    child: const Text(
-                      'REGISTER',
-                      style: TextStyle(fontSize: 18, color: Colors.white),
+                    const SizedBox(height: 16.0),
+                    _buildTextField(
+                      hintText: 'Username or Email',
+                      icon: Icons.email_outlined,
                     ),
-                  ),
-                  const SizedBox(height: 10.0),
+                    const SizedBox(height: 16.0),
+                    _buildTextField(
+                      hintText: 'Mobile Number',
+                      icon: Icons.phone_android_outlined,
+                      keyboardType: TextInputType.phone,
+                    ),
+                    const SizedBox(height: 16.0),
+                    _buildTextField(
+                      hintText: 'Password',
+                      icon: Icons.lock_outline,
+                      obscureText: true,
+                    ),
+                    const SizedBox(height: 16.0),
+                    _buildTextField(
+                      hintText: 'Confirm Password',
+                      icon: Icons.lock_open_outlined,
+                      obscureText: true,
+                    ),
+                    const SizedBox(height: 32.0),
 
-                  // Login TextButton navigate to login screen
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "Already have an account? ",
-                        style: TextStyle(color: Colors.black54),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          // Navigate back to Login Page
-                          Navigator.pop(context);
-                        },
-                        child: Text(
-                          'Log In',
-                          style: TextStyle(color: APPColor.backgroundColor),
+                    // registration button
+                    ElevatedButton(
+                      onPressed: () {
+                        // Handle registration logic
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: APPColor.backgroundColor,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 50,
+                          vertical: 15,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
-                    ],
-                  ),
-                ],
+                      child: const Text(
+                        'REGISTER',
+                        style: TextStyle(fontSize: 18, color: Colors.white),
+                      ),
+                    ),
+                    const SizedBox(height: 10.0),
+
+                    // Login TextButton navigate to login screen
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "Already have an account? ",
+                          style: TextStyle(color: Colors.black54),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            // Navigate back to Login Page
+                            Navigator.pop(context);
+                          },
+                          child: Text(
+                            'Log In',
+                            style: TextStyle(color: APPColor.backgroundColor),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
